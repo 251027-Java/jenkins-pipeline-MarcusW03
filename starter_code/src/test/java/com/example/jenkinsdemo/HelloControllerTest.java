@@ -18,13 +18,13 @@ class HelloControllerTest {
     void hello_ShouldReturnMessage() throws Exception {
         mockMvc.perform(get("/api/hello"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message").value("Hello from Jenkins Demo App!"));
+                .andExpect(jsonPath("$.message").value("Hello from Jenkins Demo Ap!"));
     }
 
     @Test
     void health_ShouldReturnUp() throws Exception {
         mockMvc.perform(get("/api/health"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.status").value("UP"));
+                .andExpect(jsonPath("$.status").value("DOWN"));
     }
 }
